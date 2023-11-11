@@ -4,7 +4,7 @@ import javax.persistence.Column
 import javax.persistence.Entity
 
 @Entity
-internal class UserEntity(
+class UserEntity(
     @Column
     val name: String
 ) : BaseEntity()
