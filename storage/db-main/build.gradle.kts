@@ -5,7 +5,7 @@ allOpen {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-data-jpa")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     runtimeOnly("com.h2database:h2")
     runtimeOnly("com.mysql:mysql-connector-j:8.1.0")
 }
