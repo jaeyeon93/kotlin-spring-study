@@ -2,7 +2,8 @@ rootProject.name = "hellp-spring"
 
 include(
     "hello-spring-api",
-    "support:logging"
+    "support:logging",
+    "storage:db-main"
 )
 
 pluginManagement {
