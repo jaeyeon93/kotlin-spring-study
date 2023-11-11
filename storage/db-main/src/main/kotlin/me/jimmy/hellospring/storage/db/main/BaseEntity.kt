@@ -1,4 +1,4 @@
-package me.jimmy.hellospring.storage
+package me.jimmy.hellospring.storage.db.main
 
 import org.hibernate.annotations.CreationTimestamp
 import org.hibernate.annotations.UpdateTimestamp

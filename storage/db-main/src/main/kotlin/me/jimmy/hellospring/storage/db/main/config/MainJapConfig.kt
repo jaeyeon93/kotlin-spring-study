@@ -1,4 +1,4 @@
-package me.jimmy.hellospring.storage.config
+package me.jimmy.hellospring.storage.db.main.config
 
 import org.springframework.boot.autoconfigure.domain.EntityScan
 import org.springframework.context.annotation.Configuration

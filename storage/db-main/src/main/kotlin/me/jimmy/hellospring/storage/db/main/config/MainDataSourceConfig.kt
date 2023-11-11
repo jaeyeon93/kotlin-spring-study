@@ -1,4 +1,4 @@
-package me.jimmy.hellospring.storage.config
+package me.jimmy.hellospring.storage.db.main.config
 
 import com.zaxxer.hikari.HikariConfig
 import com.zaxxer.hikari.HikariDataSource
