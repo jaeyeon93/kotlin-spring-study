@@ -1,4 +1,4 @@
-rootProject.name = "hellp-spring"
+rootProject.name = "hello-spring"
 
 include(
     "hello-spring-api",
