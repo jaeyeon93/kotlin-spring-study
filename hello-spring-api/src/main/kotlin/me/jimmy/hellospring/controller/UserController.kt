@@ -24,4 +24,11 @@ class UserController(
     ): UserResponse {
         return UserResponse(userService.read(userId))
     }
+
+    @GetMapping("/thread")
+    fun threadTest(): String {
+        println("[여기]threadName : ${Thread.currentThread().name}")
+        Thread.sleep(100000L)
+        return "OK"
+    }
 }

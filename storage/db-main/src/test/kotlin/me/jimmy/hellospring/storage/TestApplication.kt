@@ -1,13 +1,13 @@
-package me.jimmy.hellospring.storage.db.main
+package me.jimmy.hellospring.storage
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan
 import org.springframework.boot.runApplication
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = ["me.jimmy.hellospring"])
 @ConfigurationPropertiesScan
-class CoreDbTestApplication
+class TestApplication
 
 fun main(args: Array<String>) {
-    runApplication<CoreDbTestApplication>(*args)
+    runApplication<TestApplication>(*args)
 }
