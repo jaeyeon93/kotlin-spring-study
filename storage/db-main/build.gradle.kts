@@ -4,7 +4,7 @@ plugins {
 
 allOpen {
     annotation("javax.persistence.Entity")
-    annotation("javax.persistence.MappedSuperClass")
+    annotation("javax.persistence.MappedSuperclass")
     annotation("javax.persistence.Embeddable")
 }
 

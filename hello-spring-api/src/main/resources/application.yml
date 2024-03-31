@@ -6,6 +6,14 @@ spring:
     import:
       - logging.yml
       - db-main.yml
+
+
+custom:
+  user: jaeyeon
+
+logging:
+  level:
+    root: debug
 ---
 spring.config.activate.on-profile: local
 

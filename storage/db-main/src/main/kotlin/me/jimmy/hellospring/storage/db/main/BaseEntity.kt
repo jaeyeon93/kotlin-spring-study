@@ -2,7 +2,8 @@ package me.jimmy.hellospring.storage.db.main
 
 import org.hibernate.annotations.CreationTimestamp
 import org.hibernate.annotations.UpdateTimestamp
-import java.time.ZonedDateTime
+import java.time.LocalDateTime
+import javax.persistence.Column
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
 import javax.persistence.Id
@@ -15,9 +16,11 @@ abstract class BaseEntity {
     val id: Long? = null
 
     @CreationTimestamp
-    val createdAt: ZonedDateTime? = null
+    @Column(updatable = false)
+    val createdAt: LocalDateTime? = null
 
     @UpdateTimestamp
-    var updatedAt: ZonedDateTime? = null
+    @Column
+    var updatedAt: LocalDateTime? = null
         protected set
 }

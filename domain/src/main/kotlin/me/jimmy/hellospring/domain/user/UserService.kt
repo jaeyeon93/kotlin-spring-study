@@ -12,6 +12,6 @@ class UserService(
     }
 
     fun read(id: Long): User {
-        return userReader.read(id)
+        return userReader.read(id) ?: throw NoSuchElementException("user없음")
     }
 }
