@@ -9,18 +9,18 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 class UserController(
-    private val userService: UserService
+    private val userService: UserService,
 ) {
     @PostMapping("/users")
     fun addUser(
-        @RequestBody request: NewUserRequest
+        @RequestBody request: NewUserRequest,
     ): NewUserResponse {
-        return NewUserResponse(userService.add(request.name ))
+        return NewUserResponse(userService.add(request.name))
     }
 
     @GetMapping("/users/{userId}")
     fun findUser(
-        @PathVariable userId: Long
+        @PathVariable userId: Long,
     ): UserResponse {
         return UserResponse(userService.read(userId))
     }

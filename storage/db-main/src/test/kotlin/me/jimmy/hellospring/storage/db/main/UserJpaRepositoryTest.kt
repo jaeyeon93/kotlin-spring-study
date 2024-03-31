@@ -6,11 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired
 
 @CoreDbContextTest
 internal class UserJpaRepositoryTest(
-    @Autowired private val sut: UserJpaRepository
+    @Autowired private val sut: UserJpaRepository,
 ) {
     @Test
     fun save() {
         sut.save(UserEntityBuilder().build())
-
     }
 }

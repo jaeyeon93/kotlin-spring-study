@@ -6,5 +6,5 @@ import javax.persistence.Entity
 @Entity
 class UserEntity(
     @Column
-    val name: String
+    val name: String,
 ) : BaseEntity()

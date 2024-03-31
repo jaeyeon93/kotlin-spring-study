@@ -7,11 +7,11 @@ import org.springframework.stereotype.Repository
 
 @Repository
 internal class UserEntityRepository(
-    private val userJpaRepository: UserJpaRepository
+    private val userJpaRepository: UserJpaRepository,
 ) : UserRepository {
     override fun add(name: String): Long {
         return userJpaRepository.save(
-            UserEntity(name = name)
+            UserEntity(name = name),
         ).id!!
     }
 
@@ -19,7 +19,7 @@ internal class UserEntityRepository(
         return userJpaRepository.findByIdOrNull(id)?.let {
             User(
                 id = it.id!!,
-                name = it.name
+                name = it.name,
             )
         }
     }

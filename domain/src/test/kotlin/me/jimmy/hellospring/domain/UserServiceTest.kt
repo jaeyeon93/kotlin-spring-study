@@ -18,10 +18,11 @@ class UserServiceTest {
 
     @Test
     fun `user를 id로 조회할 수 있다`() {
-        every { userReader.read(any()) } returns User(
-            id =  1L,
-            name = "test"
-        )
+        every { userReader.read(any()) } returns
+            User(
+                id = 1L,
+                name = "test",
+            )
 
         val actual = sut.read(1L)
 
