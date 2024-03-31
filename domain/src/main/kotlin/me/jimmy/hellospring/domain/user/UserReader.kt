@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component
 class UserReader(
     private val repository: UserRepository
 ) {
-    fun read(id: Long): User {
-        return repository.read(id) ?: throw java.util.NoSuchElementException()
+    fun read(id: Long): User? {
+        return repository.read(id)
     }
 }

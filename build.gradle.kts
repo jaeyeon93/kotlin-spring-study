@@ -2,6 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm")
+    kotlin("kapt")
     kotlin("plugin.spring") apply false
     kotlin("plugin.jpa") apply false
     id("org.springframework.boot") apply false
@@ -26,11 +27,13 @@ allprojects {
 
 subprojects {
     apply(plugin = "org.jetbrains.kotlin.jvm")
+    apply(plugin = "org.jetbrains.kotlin.kapt")
     apply(plugin = "org.jetbrains.kotlin.plugin.spring")
     apply(plugin = "org.jetbrains.kotlin.plugin.jpa")
 
     apply(plugin = "org.springframework.boot")
     apply(plugin = "io.spring.dependency-management")
+    val mockkVersion: String by project
 
     dependencyManagement {
         val springCloudDependenciesVersion: String by project
@@ -44,6 +47,8 @@ subprojects {
         implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
         implementation("org.jetbrains.kotlin:kotlin-reflect")
         testImplementation("org.springframework.boot:spring-boot-starter-test")
+        testImplementation("io.mockk:mockk:${mockkVersion}")
+        kapt("org.springframework.boot:spring-boot-configuration-processor")
     }
 
     tasks.getByName("bootJar") {
