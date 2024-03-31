@@ -16,7 +16,9 @@ internal class MainDataSourceConfig {
     }
 
     @Bean
-    fun mainDataSource(@Qualifier("mainHikariConfig") config: HikariConfig): HikariDataSource {
+    fun mainDataSource(
+        @Qualifier("mainHikariConfig") config: HikariConfig,
+    ): HikariDataSource {
         return HikariDataSource(config)
     }
 }

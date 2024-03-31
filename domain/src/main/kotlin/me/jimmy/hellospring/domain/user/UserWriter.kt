@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component
 
 @Component
 class UserWriter(
-    private val repository: UserRepository
+    private val repository: UserRepository,
 ) {
     fun add(name: String): Long {
         return repository.add(name)

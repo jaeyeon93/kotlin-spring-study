@@ -4,11 +4,10 @@ import org.junit.jupiter.api.Test
 import org.slf4j.LoggerFactory
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.context.ApplicationContext
-import org.springframework.core.env.Environment
 
 @SpringBootTest
 class ApplicationContextTest(
-    private val sut : ApplicationContext,
+    private val sut: ApplicationContext,
 ) {
     @Test
     fun `테스트`() {
