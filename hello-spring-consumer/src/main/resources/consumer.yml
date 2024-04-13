@@ -1,0 +1,27 @@
+spring.config.activate.on-profile: local
+
+kafka:
+  consumer:
+    topic: test-topic
+    bootstrapServer: localhost:9092
+    enabled: true
+    groupId: local-group
+
+
+---
+spring.config.activate.on-profile: local-dev
+
+kafka:
+  consumer:
+    enabled: true
+
+
+---
+spring.config.activate.on-profile: dev
+
+---
+spring.config.activate.on-profile: staging
+
+---
+spring.config.activate.on-profile: live
+
