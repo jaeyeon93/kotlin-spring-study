@@ -1,6 +1,7 @@
 package me.jimmy.hellospring.controller
 
 import me.jimmy.hellospring.domain.user.UserService
+import org.slf4j.LoggerFactory
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
@@ -22,6 +23,7 @@ class UserController(
     fun findUser(
         @PathVariable userId: Long,
     ): UserResponse {
+        log.info("userId : $userId")
         return UserResponse(userService.read(userId))
     }
 
@@ -30,5 +32,9 @@ class UserController(
         println("[여기]threadName : ${Thread.currentThread().name}")
         Thread.sleep(100000L)
         return "OK"
+    }
+
+    companion object {
+        private val log = LoggerFactory.getLogger(UserController::class.java)
     }
 }
