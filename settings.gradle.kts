@@ -2,6 +2,7 @@ rootProject.name = "hello-spring"
 
 include(
     "hello-spring-api",
+    "hello-spring-admin-api",
     "support:logging",
     "storage:db-main",
     "clients:client-sample",

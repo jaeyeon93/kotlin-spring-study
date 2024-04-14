@@ -1,5 +1,6 @@
 package me.jimmy.hellospring.controller
 
+import me.jimmy.hellospring.domain.user.User
 import me.jimmy.hellospring.domain.user.UserService
 import org.slf4j.LoggerFactory
 import org.springframework.web.bind.annotation.GetMapping
@@ -24,6 +25,9 @@ class UserController(
         @PathVariable userId: Long,
     ): UserResponse {
         log.info("userId : $userId")
+        if (userId == 0L) {
+            return UserResponse(User(id = userId, name = "test"))
+        }
         return UserResponse(userService.read(userId))
     }
 
