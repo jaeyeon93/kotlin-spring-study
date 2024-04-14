@@ -1,3 +1,4 @@
 
 example-client:
-  url: fake-url
+  url: localhost:8080
+  name: example-client
