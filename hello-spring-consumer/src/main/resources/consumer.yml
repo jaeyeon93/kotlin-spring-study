@@ -3,9 +3,10 @@ spring.config.activate.on-profile: local
 kafka:
   consumer:
     topic: test-topic
-    bootstrapServer: localhost:9092
+    bootstrapServer: localhost:9092,localhost:9093,localhost:9094
     enabled: true
     groupId: local-group
+    max-poll-records: 3
 
 
 ---
