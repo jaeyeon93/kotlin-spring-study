@@ -9,4 +9,3 @@ class HelloSpringAdminApplication
 fun main(args: Array<String>) {
     runApplication<HelloSpringAdminApplication>(*args)
 }
-

@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.PathVariable
 interface ExampleClient {
     @GetMapping(
         value = ["/users/{userId}"],
-        consumes = [MediaType.APPLICATION_JSON_VALUE]
+        consumes = [MediaType.APPLICATION_JSON_VALUE],
     )
-    fun getUserById(@PathVariable userId: Long): UserResponseDto
+    fun getUserById(
+        @PathVariable userId: Long,
+    ): UserResponseDto
 }
