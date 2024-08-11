@@ -1,24 +1,14 @@
 spring.application.name: hello-spring-api
 spring.profiles.active: local
-        
+
 spring:
   config:
     import:
       - logging.yml
       - db-main.yml
+      - consumer.yml
+      - example-client.yml
 
-
-custom:
-  user: jaeyeon
-
-kafka:
-  producer:
-    bootstrapServer: localhost:9092,localhost:9093,localhost:9094
-    topic: test-topic
-
-logging:
-  level:
-    root: debug
 ---
 spring.config.activate.on-profile: local
 
