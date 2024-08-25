@@ -6,7 +6,7 @@ import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Repository
 
 @Repository
-internal class UserEntityRepository(
+internal class UserRepository(
     private val userJpaRepository: UserJpaRepository,
 ) : UserRepository {
     override fun add(name: String): Long {
