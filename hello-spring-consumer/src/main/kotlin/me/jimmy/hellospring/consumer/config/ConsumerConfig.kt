@@ -1,6 +1,11 @@
 package me.jimmy.hellospring.consumer.config
 
-import org.apache.kafka.clients.consumer.ConsumerConfig.*
+import org.apache.kafka.clients.consumer.ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG
+import org.apache.kafka.clients.consumer.ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG
+import org.apache.kafka.clients.consumer.ConsumerConfig.GROUP_ID_CONFIG
+import org.apache.kafka.clients.consumer.ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG
+import org.apache.kafka.clients.consumer.ConsumerConfig.MAX_POLL_RECORDS_CONFIG
+import org.apache.kafka.clients.consumer.ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG
 import org.apache.kafka.common.serialization.StringDeserializer
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
@@ -15,7 +20,7 @@ import org.springframework.kafka.listener.ContainerProperties
 @Configuration
 @ConditionalOnProperty(
     name = ["kafka.consumer.enabled"],
-    havingValue = "true"
+    havingValue = "true",
 )
 @EnableKafka
 class ConsumerConfig(
@@ -38,7 +43,7 @@ class ConsumerConfig(
 
     @Bean
     fun concurrentKafkaListenerContainerFactory(
-        consumerFactory: ConsumerFactory<String, Any>
+        consumerFactory: ConsumerFactory<String, Any>,
     ): ConcurrentKafkaListenerContainerFactory<String, Any> {
         return (ConcurrentKafkaListenerContainerFactory<String, Any>()).also {
             it.consumerFactory = consumerFactory
