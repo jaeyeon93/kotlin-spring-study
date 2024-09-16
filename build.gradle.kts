@@ -1,6 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
+    idea
     kotlin("jvm")
     kotlin("kapt")
     kotlin("plugin.spring") apply false
@@ -16,6 +17,13 @@ java.sourceCompatibility = JavaVersion.VERSION_17
 
 val projectGroup: String by project
 val applicationVersion: String by project
+
+idea {
+    module {
+        isDownloadJavadoc = true
+        isDownloadSources = true
+    }
+}
 
 allprojects {
     group = projectGroup
