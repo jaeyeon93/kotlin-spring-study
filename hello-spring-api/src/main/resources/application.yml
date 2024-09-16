@@ -6,6 +6,7 @@ spring:
     import:
       - logging.yml
       - db-main.yml
+      - monitoring.yml
 
 
 custom:
