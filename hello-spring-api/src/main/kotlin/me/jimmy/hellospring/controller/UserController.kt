@@ -3,6 +3,7 @@ package me.jimmy.hellospring.controller
 import me.jimmy.hellospring.domain.user.User
 import me.jimmy.hellospring.domain.user.UserService
 import org.slf4j.LoggerFactory
+import org.slf4j.MDC
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
@@ -24,7 +25,10 @@ class UserController(
     fun findUser(
         @PathVariable userId: Long,
     ): UserResponse {
-        log.info("userId : $userId")
+        val traceId = MDC.get("traceId");
+        val spanId = MDC.get("spanId");
+
+        log.info("여기 userId : $userId traceId : $traceId spanId : $spanId")
         if (userId == 0L) {
             return UserResponse(User(id = userId, name = "test"))
         }

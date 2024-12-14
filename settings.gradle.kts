@@ -5,9 +5,9 @@ include(
     "hello-spring-admin-api",
     "hello-spring-consumer",
     "support:logging",
+    "support:monitoring",
     "storage:db-main",
-    "clients:client-sample",
-    "domain"
+    "clients:client-sample"
 )
 
 pluginManagement {

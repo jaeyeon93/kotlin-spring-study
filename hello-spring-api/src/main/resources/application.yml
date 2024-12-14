@@ -5,6 +5,7 @@ spring:
   config:
     import:
       - logging.yml
+      - monitoring.yml
       - db-main.yml
 
 
