@@ -19,6 +19,12 @@ class AdminController(
         return HttpStatus.OK
     }
 
+    @GetMapping("/tracing-test")
+    fun tracingTest(): HttpStatus {
+        log.info("tracingTest start")
+        return HttpStatus.OK
+    }
+
     companion object {
         private val log = LoggerFactory.getLogger(AdminController::class.java)
     }

@@ -1,0 +1,4 @@
+
+admin-api:
+  url: localhost:8081
+  name: admin-api-client
