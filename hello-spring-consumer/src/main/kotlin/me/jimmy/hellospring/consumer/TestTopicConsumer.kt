@@ -1,7 +1,6 @@
 package me.jimmy.hellospring.consumer
 
 import me.jimmy.hellospring.clients.ExampleClient
-import org.apache.commons.logging.LogFactory
 import org.apache.kafka.clients.consumer.ConsumerRecord
 import org.slf4j.LoggerFactory
 import org.springframework.kafka.annotation.KafkaListener
@@ -16,7 +15,10 @@ class TestTopicConsumer(
         topics = ["\${kafka.consumer.topic}"],
         containerFactory = "concurrentKafkaListenerContainerFactory",
     )
-    fun consume(record: ConsumerRecord<String, String>, acknowledgment: Acknowledgment) {
+    fun consume(
+        record: ConsumerRecord<String, String>,
+        acknowledgment: Acknowledgment,
+    ) {
         log.info("header : ${record.headers()} offset : ${record.offset()} value : ${record.value()}")
 
         Thread.sleep(500)
