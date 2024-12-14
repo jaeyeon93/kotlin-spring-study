@@ -8,9 +8,7 @@ tasks.getByName("jar") {
 
 dependencies {
     implementation(project(":support:logging"))
-    implementation(project(":domain"))
-    runtimeOnly(project(":storage:db-main"))
-
+    implementation(project(":storage:db-main"))
     implementation("org.springframework.kafka:spring-kafka")
     implementation("org.springframework.boot:spring-boot-starter-web")
 }
