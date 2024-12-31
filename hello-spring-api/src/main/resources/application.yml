@@ -20,7 +20,7 @@ kafka:
 
 logging:
   level:
-    root: debug
+    root: info
 ---
 spring.config.activate.on-profile: local
 
