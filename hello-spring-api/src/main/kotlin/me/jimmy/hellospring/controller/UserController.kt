@@ -1,6 +1,5 @@
 package me.jimmy.hellospring.controller
 
-import me.jimmy.hellospring.domain.user.User
 import me.jimmy.hellospring.domain.user.UserService
 import org.slf4j.LoggerFactory
 import org.slf4j.MDC
@@ -25,20 +24,20 @@ class UserController(
     fun findUser(
         @PathVariable userId: Long,
     ): UserResponse {
-        val traceId = MDC.get("traceId");
-        val spanId = MDC.get("spanId");
+        val traceId = MDC.get("traceId")
+        val spanId = MDC.get("spanId")
 
         log.info("여기 userId : $userId traceId : $traceId spanId : $spanId")
         if (userId == 0L) {
             return UserResponse(
                 id = 0L,
-                name = "test"
+                name = "test",
             )
         }
         val user = userService.read(userId)
         return UserResponse(
             id = user.id,
-            name = user.name
+            name = user.name,
         )
     }
 

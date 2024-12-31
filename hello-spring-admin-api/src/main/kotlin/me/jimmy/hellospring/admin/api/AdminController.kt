@@ -1,6 +1,6 @@
 package me.jimmy.hellospring.admin.api
 
-import me.jimmy.hellospring.clients.ExampleClient
+import me.jimmy.hellospring.clients.clientsample.ExampleClient
 import org.slf4j.LoggerFactory
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.GetMapping
