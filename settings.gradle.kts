@@ -7,7 +7,8 @@ include(
     "support:logging",
     "support:monitoring",
     "storage:db-main",
-    "clients:client-sample"
+    "clients:client-sample",
+    "clients:client-admin-api",
 )
 
 pluginManagement {

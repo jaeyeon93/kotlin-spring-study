@@ -30,9 +30,16 @@ class UserController(
 
         log.info("여기 userId : $userId traceId : $traceId spanId : $spanId")
         if (userId == 0L) {
-            return UserResponse(User(id = userId, name = "test"))
+            return UserResponse(
+                id = 0L,
+                name = "test"
+            )
         }
-        return UserResponse(userService.read(userId))
+        val user = userService.read(userId)
+        return UserResponse(
+            id = user.id,
+            name = user.name
+        )
     }
 
     @GetMapping("/thread")

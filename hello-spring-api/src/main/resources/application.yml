@@ -7,6 +7,7 @@ spring:
       - logging.yml
       - monitoring.yml
       - db-main.yml
+      - admin-api-client.yml
 
 
 custom:
@@ -19,7 +20,7 @@ kafka:
 
 logging:
   level:
-    root: debug
+    root: info
 ---
 spring.config.activate.on-profile: local
 
