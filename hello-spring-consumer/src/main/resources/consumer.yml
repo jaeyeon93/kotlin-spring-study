@@ -8,6 +8,12 @@ kafka:
     groupId: local-group
     max-poll-records: 3
 
+management:
+  tracing:
+    propagation:
+      type:
+        - b3
+        - w3c
 
 ---
 spring.config.activate.on-profile: local-dev

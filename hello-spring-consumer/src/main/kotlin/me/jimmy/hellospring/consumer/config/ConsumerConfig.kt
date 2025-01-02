@@ -16,6 +16,8 @@ import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory
 import org.springframework.kafka.core.ConsumerFactory
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory
 import org.springframework.kafka.listener.ContainerProperties
+import org.springframework.kafka.support.micrometer.KafkaListenerObservation
+import org.springframework.kafka.support.micrometer.KafkaListenerObservationConvention
 
 @Configuration
 @ConditionalOnProperty(
@@ -47,7 +49,8 @@ class ConsumerConfig(
     ): ConcurrentKafkaListenerContainerFactory<String, Any> {
         return (ConcurrentKafkaListenerContainerFactory<String, Any>()).also {
             it.consumerFactory = consumerFactory
-            it.containerProperties.ackMode = ContainerProperties.AckMode.MANUAL
+            it.containerProperties.observationConvention = KafkaListenerObservation.DefaultKafkaListenerObservationConvention.INSTANCE
+            it.containerProperties.isObservationEnabled = true
         }
     }
 }

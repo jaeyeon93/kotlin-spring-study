@@ -20,9 +20,9 @@ class AdminController(
     }
 
     @GetMapping("/tracing-test")
-    fun tracingTest(): HttpStatus {
+    fun tracingTest(): String {
         log.info("tracingTest start")
-        return HttpStatus.OK
+        return HttpStatus.OK.name
     }
 
     companion object {
