@@ -1,4 +1,4 @@
 
 example-client:
   url: localhost:8080
-  name: example-client
+  name: example-client-api

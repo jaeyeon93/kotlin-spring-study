@@ -14,7 +14,9 @@ internal class FeignTestController(
     private val logger = LoggerFactory.getLogger(javaClass)
 
     @GetMapping("/feign/{count}")
-    fun feignTest(@PathVariable count: Int): HttpStatus {
+    fun feignTest(
+        @PathVariable count: Int,
+    ): HttpStatus {
         logger.info("FeignControllerTest#feignTest start count : $count")
         adminApi.test()
         return HttpStatus.OK

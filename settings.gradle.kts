@@ -9,6 +9,7 @@ include(
     "storage:db-main",
     "clients:client-sample",
     "clients:client-admin-api",
+    "common:util"
 )
 
 pluginManagement {

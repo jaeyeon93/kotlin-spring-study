@@ -1,4 +1,4 @@
-spring.application.name: hello-spring-api
+spring.application.name: hello-spring-consumer
 spring.profiles.active: local
 
 spring:
@@ -8,7 +8,7 @@ spring:
       - db-main.yml
       - consumer.yml
       - example-client.yml
-
+      - admin-api-client.yml
 ---
 spring.config.activate.on-profile: local
 

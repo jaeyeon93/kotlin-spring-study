@@ -1,6 +1,6 @@
 package me.jimmy.hellospring.admin.api
 
-import me.jimmy.hellospring.clients.ExampleClient
+import me.jimmy.hellospring.clients.clientsample.ExampleClient
 import org.slf4j.LoggerFactory
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.GetMapping
@@ -20,9 +20,9 @@ class AdminController(
     }
 
     @GetMapping("/tracing-test")
-    fun tracingTest(): HttpStatus {
+    fun tracingTest(): String {
         log.info("tracingTest start")
-        return HttpStatus.OK
+        return HttpStatus.OK.name
     }
 
     companion object {

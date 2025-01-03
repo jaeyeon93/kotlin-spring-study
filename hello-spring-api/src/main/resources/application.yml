@@ -8,10 +8,10 @@ spring:
       - monitoring.yml
       - db-main.yml
       - admin-api-client.yml
+  kafka:
+    template:
+      observation-enabled: true
 
-
-custom:
-  user: jaeyeon
 
 kafka:
   producer:
