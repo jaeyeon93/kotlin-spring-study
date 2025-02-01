@@ -1,0 +1,7 @@
+spring.application.name: hello-spring-client-admin-api-test
+spring.profiles.active: local-dev
+
+spring:
+  config:
+    import:
+      - admin-api-client.yml
