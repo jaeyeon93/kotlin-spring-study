@@ -14,9 +14,7 @@ class TestTopicConsumer(
         topics = ["\${kafka.consumer.topic}"],
         containerFactory = "concurrentKafkaListenerContainerFactory",
     )
-    fun consume(
-        record: ConsumerRecord<String, String>
-    ) {
+    fun consume(record: ConsumerRecord<String, String>) {
         log.info("header : ${record.headers()} offset : ${record.offset()} value : ${record.value()}")
 
 //        adminApi.test()

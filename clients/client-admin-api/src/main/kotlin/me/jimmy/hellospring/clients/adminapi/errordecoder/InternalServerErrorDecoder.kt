@@ -11,7 +11,10 @@ import java.lang.Exception
 internal class InternalServerErrorDecoder : ErrorDecoder {
     private val logger = LoggerFactory.getLogger(javaClass)
 
-    override fun decode(methodKey: String, response: Response): Exception {
+    override fun decode(
+        methodKey: String,
+        response: Response,
+    ): Exception {
         val exception = FeignException.errorStatus(methodKey, response)
         if (response.status() == HttpStatus.INTERNAL_SERVER_ERROR.value()) {
             logger.info("admin api 500 에러", exception)
@@ -21,7 +24,7 @@ internal class InternalServerErrorDecoder : ErrorDecoder {
                 exception.message,
                 response.request().httpMethod(),
                 1000L,
-                response.request()
+                response.request(),
             )
         }
         return exception

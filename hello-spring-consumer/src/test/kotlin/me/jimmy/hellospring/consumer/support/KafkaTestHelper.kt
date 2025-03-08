@@ -6,15 +6,11 @@ import org.apache.kafka.common.header.internals.RecordHeaders
 import org.apache.kafka.common.record.TimestampType
 
 internal object KafkaTestHelper {
-
     fun readFileBy(fileName: String) = this.javaClass.classLoader.getResource(fileName).readText()
 
-    fun buildConsumerRecord(
-        body: String,
-    ): ConsumerRecord<String, String> {
+    fun buildConsumerRecord(body: String): ConsumerRecord<String, String> {
         return buildConsumerRecord("{}", body)
     }
-
 
     fun buildConsumerRecord(
         header: String,
