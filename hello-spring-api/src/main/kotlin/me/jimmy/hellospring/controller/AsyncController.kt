@@ -16,7 +16,9 @@ internal class AsyncController(
     private val logger = LoggerFactory.getLogger(javaClass)
 
     @GetMapping("/async-test/{count}")
-    private fun asyncTest(@PathVariable count: Int): String {
+    private fun asyncTest(
+        @PathVariable count: Int,
+    ): String {
         logger.info("AsyncController#asyncTest start")
         val futures = mutableListOf<Future<String>>()
         for (i in 1..count) {
@@ -28,7 +30,9 @@ internal class AsyncController(
     }
 
     @GetMapping("/sync-test/{count}")
-    private fun syncTest(@PathVariable count: Int): String {
+    private fun syncTest(
+        @PathVariable count: Int,
+    ): String {
         logger.info("AsyncController#syncTest start")
         for (i in 1..count) {
             adminApi.test()

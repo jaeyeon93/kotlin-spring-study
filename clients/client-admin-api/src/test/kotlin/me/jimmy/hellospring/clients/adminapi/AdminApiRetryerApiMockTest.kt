@@ -1,6 +1,11 @@
 package me.jimmy.hellospring.clients.adminapi
 
-import com.github.tomakehurst.wiremock.client.WireMock.*
+import com.github.tomakehurst.wiremock.client.WireMock.get
+import com.github.tomakehurst.wiremock.client.WireMock.getRequestedFor
+import com.github.tomakehurst.wiremock.client.WireMock.serverError
+import com.github.tomakehurst.wiremock.client.WireMock.stubFor
+import com.github.tomakehurst.wiremock.client.WireMock.urlEqualTo
+import com.github.tomakehurst.wiremock.client.WireMock.verify
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 import org.springframework.boot.test.context.SpringBootTest
@@ -18,12 +23,13 @@ internal class AdminApiRetryerApiMockTest(
         val requestPath = "/admin/tracing-test"
         stubFor(
             get(urlEqualTo(requestPath))
-                .willReturn(serverError())
+                .willReturn(serverError()),
         )
 
-        val exception = assertThrows<RuntimeException> {
-            sut.test()
-        }
+        val exception =
+            assertThrows<RuntimeException> {
+                sut.test()
+            }
 
         verify(3, getRequestedFor(urlEqualTo(requestPath)))
 

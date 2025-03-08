@@ -17,12 +17,13 @@ internal class AsyncConfiguration {
             corePoolSize = 30,
             maxPoolSize = 30,
             threadNamePrefix = "core-api-async",
-            taskDecorator = CompositeTaskDecorator(
-                listOf(
-                    ContextPropagatingTaskDecorator(),
-                    MdcDecorator(),
-                )
-            )
+            taskDecorator =
+                CompositeTaskDecorator(
+                    listOf(
+                        ContextPropagatingTaskDecorator(),
+                        MdcDecorator(),
+                    ),
+                ),
         )
     }
 
