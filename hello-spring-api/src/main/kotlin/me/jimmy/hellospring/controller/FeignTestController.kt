@@ -21,4 +21,10 @@ internal class FeignTestController(
         adminApi.test()
         return HttpStatus.OK
     }
+
+    @GetMapping("/feign/user")
+    fun userCallTest(): String {
+        adminApi.userTest()
+        return "OK"
+    }
 }
