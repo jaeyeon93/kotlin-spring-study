@@ -1,25 +1,26 @@
 package me.jimmy.hellospring.admin.api
 
-import me.jimmy.hellospring.clients.clientsample.ExampleClient
+import me.jimmy.hellospring.admin.api.response.AdminUserResponse
+import me.jimmy.hellospring.admin.api.support.ApiResponse
 import org.slf4j.LoggerFactory
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping("/admin")
-class AdminController(
-    private val exampleClient: ExampleClient,
-) {
-    @GetMapping("/test")
-    fun test(): HttpStatus {
-        val user = exampleClient.getUserById(0L)
-        log.info("user : $user")
-        return HttpStatus.OK
+internal class AdminController {
+    @GetMapping("/admin/test")
+    fun test(): ApiResponse<AdminUserResponse> {
+        log.info("admin/test start")
+        return ApiResponse.success(
+            AdminUserResponse(
+                id = 0L,
+                name = "test",
+            ),
+        )
     }
 
-    @GetMapping("/tracing-test")
+    @GetMapping("/admin/tracing-test")
     fun tracingTest(): String {
         log.info("tracingTest start")
         return HttpStatus.OK.name
